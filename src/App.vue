@@ -10,15 +10,15 @@
 
 <template>
   <div id="app" :class="vueAppClasses">
-    <router-view @setAppClasses="setAppClasses" />
+    <transition mode="out-in">
+      <router-view @setAppClasses="setAppClasses"/>
+    </transition>
   </div>
 </template>
 
 <script>
 import themeConfig from '@/../themeConfig.js'
 import jwt         from '@/http/requests/auth/jwt/index.js'
-
-import VuePlyr from 'vue-plyr'
 
 export default {
   data () {
